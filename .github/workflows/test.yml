@@ -17,12 +17,18 @@ on:
 jobs:
   github-action-test:
     runs-on: ubuntu-latest
+    env:
+      workflows-directory: .github/workflows
     steps:
-      - name: bash test
-        run: echo "test bash"
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
           node-version: '14.x'
+      - name: Install dependencies
+        run: npm install
+        working-directory: ${{ env.workflows-directory }}
+      - name: test.js
+        run: node test.js
+        working-directory: ${{ env.workflows-directory }}
