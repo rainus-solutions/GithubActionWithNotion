@@ -7,12 +7,12 @@ on:
       filename:
         description: 'Name of the file to add to the database'
         required: false
-        default: 'test'
+        default: 'test file'
         type: string
       filetype:
         description: 'Type of the file to add to the database'
         required: false
-        default: 'test'
+        default: 'test type'
         type: string
 jobs:
   github-action-test:
