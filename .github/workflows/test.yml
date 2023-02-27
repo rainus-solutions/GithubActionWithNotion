@@ -6,10 +6,12 @@ on:
     filename:
       description: 'Name of the file to add to the database'
       required: false
+      default: 'test'
       type: string
     filetype:
       description: 'Type of the file to add to the database'
       required: false
+      default: 'test'
       type: string
 jobs:
   github-action-test:
