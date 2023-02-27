@@ -1,17 +1,25 @@
 name: Add page to Notion database
 on:
-    push:
-        branches: [ test ]
-    workflow_call:
+  push:
+    branches: [ test ]
+  workflow_call:
+    filename:
+      description: 'Name of the file to add to the database'
+      required: false
+      type: string
+    filetype:
+      description: 'Type of the file to add to the database'
+      required: false
+      type: string
 jobs:
-    github-action-test:
-        runs-on: ubuntu-latest
-        steps:
-            - name: bash test
-              run: echo "test bash"
-            - name: Checkout code
-              uses: actions/checkout@v2
-            - name: Set up Node.js
-              uses: actions/setup-node@v2
-              with:
-                node-version: '14.x'
+  github-action-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: bash test
+        run: echo "test bash"
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14.x'
