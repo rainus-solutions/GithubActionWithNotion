@@ -1,0 +1,10 @@
+name: Add page to Notion database
+on:
+    push:
+        branches: [ test ]
+jobs:
+    github-action-test:
+        runs-on: ubuntu-latest
+        steps:
+            - name: bash test
+              run: echo "test bash"
