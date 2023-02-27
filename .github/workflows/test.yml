@@ -2,6 +2,7 @@ name: Add page to Notion database
 on:
     push:
         branches: [ test ]
+    workflow_call:
 jobs:
     github-action-test:
         runs-on: ubuntu-latest
